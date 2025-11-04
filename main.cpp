@@ -8,7 +8,6 @@
 #include "Frame.h"
 #include "Processor.h"
 #include "Receiver.h"
-#include "SPSCRing.h"
 #include "ILockFreeRing.h"
 #include "QCommandLineParser"
 #include "BoostRing.h"
@@ -37,13 +36,9 @@ int main(int argc, char *argv[]) {
         qDebug() << "Using Boost Ring Buffer.";
         ring = std::make_unique<BoostRing<Frame>>(1 << 16);
     }
-    else if (ringType == "mpmc") {
+    else {
         qDebug() << "Using Moodycamel MPMC Queue.";
         ring = std::make_unique<MpmcRing<Frame>>(1 << 16);
-    }
-    else {
-        qDebug() << "Using Custom SPSC Ring Buffer.";
-        ring = std::make_unique<SpscRing<Frame>>(1 << 16);
     }
 
     // // 64k frames capacityFr

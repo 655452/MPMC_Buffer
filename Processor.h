@@ -5,7 +5,6 @@
 #include <QDebug>
 #include <atomic>
 #include "Frame.h"
-#include "SPSCRing.h"
 #include "ILockFreeRing.h"
 
 /**

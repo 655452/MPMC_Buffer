@@ -11,12 +11,14 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Core Network)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Core Network)
+# include_directories(${CMAKE_CURRENT_SOURCE_DIR}/concurrentqueue)
+
 
 add_executable(Buffer
   main.cpp
   res.qrc
   Frame.h
-  SPSCRing.h
+
   Processor.h Processor.cpp
   Receiver.h Receiver.cpp
   BoostRing.h

@@ -6,7 +6,6 @@
 #include <QByteArray>
 #include <QDebug>
 #include "Frame.h"
-#include "SPSCRing.h"
 #include "ILockFreeRing.h"
 
 /**

@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/">
+        <file>stimulator.py</file>
+    </qresource>
+</RCC>
